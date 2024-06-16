@@ -1,0 +1,47 @@
+
+body{
+    background-color: #4242;
+    text-align: center;
+    justify-content: center;
+    /* margin: 100px; */
+}
+
+nav{
+    text-align: center;
+   /* margin: ; */
+   padding: 12px;
+}
+h1{
+    margin: 100px;
+}
+nav a{
+    text-decoration: none;
+    color: black;
+    margin: 20px;
+    font-size: 1.5rem;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: 600;
+    border: 2px solid black;
+    padding: 12px;
+    border-radius: 30px;
+}
+
+
+button {
+    border: none;
+    padding: 30px;
+    background-color: lightseagreen;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1.2rem;
+    margin: 50px;
+
+}
+#stop{
+    border: none;
+    padding: 30px;
+    background-color: tomato;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1.2rem;
+}

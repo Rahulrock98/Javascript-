@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML events</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body style="background-color: #424242;">
+    <h2>Amazing Images</h2>
+    <div>
+        <ul id="images">
+            <li> <img src="surja-sen-das-raj-JIWPWcUnhUs-unsplash.jpg" id="photoshop" alt="photoshop"> </li>
+            <li> <img src="philipp-katzenberger-iIJrUoeRoCQ-unsplash(1).jpg" id="laptop" alt=""> </li>
+            <li> <img src="pexels-carol-vazquez-26955893-7003188.jpg" id="flower" alt=""> </li>
+            <li> <img src="pexels-couleur-2317904.jpg" id="parrot" alt=""> </li>
+            <li> <img src="pexels-robertforevr-18042985.jpg" id="mountain" alt=""> </li>
+            <li><a href="www.google.com" id="google">Google</a></li>
+        </ul>
+    </div>
+</body>
+<script>
+    // document.getElementById('parrot').onclick = function(){
+    //     alert(" parrot clicked")
+    // }  // 
+
+
+
+
+    // attachEvent ()
+    //type, timeStamp, preventDefault
+    //target,  toElement, scrElement, currentTarget,
+    // clientX, clientY, screenX , screenY
+    //altkey, ctrlkey, shfitkey, keycode
+
+
+
+    // document.getElementById('images').addEventListener('click', function(e){
+    //     console.log("clicked inside the ul");
+    // },false) 
+
+
+
+    // // false is default value, if you write  true instead of false then it will give return as
+    //             // capturing mode and ' false is default as bubbling mode'
+    //             // bubling mode is work as give return from the inside to outside and capturing mode return 
+    //             // as outside to inside.
+
+
+
+    // document.getElementById('parrot').addEventListener('click', function(e){
+    //     console.log("parrot clicked!!");
+    //     e.stopPropagation()
+    // },false)
+    // document.getElementById('google').addEventListener('click', function(e){
+    //     e.preventDefault()
+    //     // e.stopPropagation()
+    //     console.log('Google clicked');
+    // })
+
+    document.querySelector('#images').addEventListener('click', function (e) {
+        console.log(e.target.tagName);
+        if (e.target.tagName === 'IMG') {
+            let removeIt = e.target.parentNode
+            removeIt.remove()
+            console.log(e.target.id);
+        }
+
+    })
+
+    // removeIt.parentNode.removeChild(removeIt)
+</script>
+
+</html>
