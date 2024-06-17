@@ -53,24 +53,24 @@
 
 
 
-const promisThree =  new Promise(function(resolve,reject){
-    setTimeout(function(){
+const promisThree = new Promise(function (resolve, reject) {
+    setTimeout(function () {
         let error = true                                                     // this code based on error=true ----------- error=false code is given below---:
-        if(!error){
-            resolve({username:'rahul', email:'rahul@gmail.com'})
+        if (!error) {
+            resolve({ username: 'rahul', email: 'rahul@gmail.com' })
         }
-        else{
+        else {
             reject('ERROR: Something went wrong!')
         }
     }, 1000);
 })
-promisThree.then((user)=>{
+promisThree.then((user) => {
     return user.username
-}).then((username)=>{
-    console.log(username  );
-}).catch((error)=>{
+}).then((username) => {
+    console.log(username);
+}).catch((error) => {
     console.log(error);
-}).finally(()=> {console.log(" finally either resolve or rejected");})
+}).finally(() => { console.log(" finally either resolve or rejected"); })
 
 // const promisThree =  new Promise(function(resolve,reject){
 //     setTimeout(function(){
@@ -92,24 +92,46 @@ promisThree.then((user)=>{
 // }).finally(()=> {console.log(" finally either resolve or rejected");})
 
 
-const promisFour = new Promise(function(resolve, reject){
-    setTimeout( function()  {
-        let error = true
-        if(!error){
-            resolve({username:'rahul', email:'rahul@gmail.com'})
-        }
-        else{
-            reject('ERROR: Something went wrong!')
-        }
-    }, 1000);
-})
+// const promisFour = new Promise(function (resolve, reject) {
+//     setTimeout(function () {
+//         let error = true
+//         if (!error) {
+//             resolve({ username: 'rahul', email: 'rahul@gmail.com' })
+//         }
+//         else {
+//             reject('ERROR: Something went wrong!')
+//         }
+//     }, 1000);
+// })
 
-async function consumePromisFour(){
-  try {
-    const response = await promisFour
-    console.log(response);
-  } catch (error) {
-    console.log(error);
-  }
-}
-consumePromisFour()
+// async function consumePromisFour() {
+//     try {
+//         const response = await promisFour
+//         console.log(response);
+//     } catch (error) {
+//         console.log(error);
+//     }
+// }
+// consumePromisFour()
+
+// async function getAllUsers() {
+//     try {
+//         const response = await fetch('https://api.github.com/users/rahulrock98')
+//         //    response.json()
+//         const data = await response.json()
+//         console.log(data);
+
+//     } catch (error) {
+//             console.log('ERROR: error');
+//     }
+// }
+// getAllUsers()
+
+ fetch('https://api.github.com/users/rahulrock98')
+ .then((response)=>{
+    return response.json()
+ })
+ .then((data)=>{
+    console.log(data.name);
+ })
+.catch((error)=> console.log(error))
